@@ -1252,9 +1252,9 @@
     // attached directly to the view.
     _configure: function(options) {
       if (this.options) options = _.extend({}, this.options, options);
-      _.each(viewOptions, function(attr) {
+      _.each(viewOptions, _.bind(function(attr) {
         if (options[attr]) this[attr] = options[attr]; 
-      });
+      },this));
       this.options = options;
     },
 
